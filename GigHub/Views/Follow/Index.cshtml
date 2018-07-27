@@ -1,0 +1,19 @@
+﻿@model System.Linq.IQueryable<GigHub.Core.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Following";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Who I am Following</h2>
+
+
+<ul>
+    
+    @foreach (var artist in Model)
+    {
+        <li>@artist.Name</li>
+    }
+
+
+</ul>

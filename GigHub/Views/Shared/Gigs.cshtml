@@ -1,0 +1,109 @@
+﻿@model GigHub.Core.ViewModels.GigViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@Model.Heading</h1>
+
+
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchBox" class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "Search by Name, Genre . . ." })
+            <span class="input-group-addon" id="basic-addon2">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div>
+
+    </div>
+}
+
+
+<ul class="gigs voffset1">
+    @foreach (var gig in Model.Gigs)
+    {
+        <li>
+
+            <div class="date">
+                <div class="month">
+                    @gig.DateTime.ToString("MMM")
+                </div>
+
+                <div class="day">
+                    @gig.DateTime.ToString("d ")
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <span class="artist">
+                    @Html.ActionLink(gig.Artist.Name, "Details", "Gigs", new { id = gig.Id }, null)
+
+                    @if (gig.IsCancelled)
+                    {
+                        <span class="label label-warning pull-right">Cancelled</span>
+                    }
+
+
+                    @if (Model.IsAuthenticated)
+                    {
+                        <button class="btn btn-link btn-sm js-toggle-follow" data-artist-id="@gig.Artist.Id">
+                            @{
+                                var value = Model.Followings.Contains(gig.ArtistId) ? "Following" : "Follow";
+                            }
+                            @value
+                        </button>
+
+                    }
+                </span>
+
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+
+                @if (Model.IsAuthenticated && !gig.IsCancelled)
+                {
+                    <button class="btn @(Model.Attendaces.Contains(gig.Id) ? "btn-info":"btn-default" ) btn-sm pull-right js-toggle-attendance" data-gig-id="@gig.Id">Going?</button>
+
+                }
+
+            </div>
+
+        </li>
+    }
+</ul>
+
+
+@section scripts
+{
+    <script>
+
+
+        $(document).ready(function () {
+
+            gigInit();
+
+            $('.js-toggle-follow').click(function (e) {
+
+                var button = $(e.target);
+
+
+                $.post("/api/followings/", { artistId: button.attr("data-artist-id") })
+                    .done(function () {
+
+                        button.text("Following");
+
+                    })
+                    .fail(function () {
+
+                        alert("Something Gone Worng");
+                    });
+
+            });
+
+        });
+
+    </script>
+}

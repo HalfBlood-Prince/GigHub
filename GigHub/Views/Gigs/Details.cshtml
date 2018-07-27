@@ -1,0 +1,42 @@
+﻿@model GigHub.Core.ViewModels.GigDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var className = "";
+    var text = "";
+
+    if (Model.IsFollowing)
+    {
+        className = "btn-info";
+        text = "Following";
+
+    }
+    else
+    {
+        className = "btn-default";
+        text = "Follow";
+    }
+}
+
+<div>
+    <div>
+        <span style="font-weight: bold;font-size: 20px">@Model.ArtistName</span>
+
+        @if (Model.IsLoggedIn)
+        {
+            <button class="btn @className">@text</button>
+        }
+    </div>
+
+
+    <div class="voffset2">Performing at @Model.Vanue on @Model.DateTime.ToString("d MMM") at @Model.DateTime.ToString("HH:mm")</div>
+    
+    @if (Model.IsLoggedIn && Model.IsGoing)
+    {
+        <p class="voffset2">Your are going at this event</p>
+    }
+</div>

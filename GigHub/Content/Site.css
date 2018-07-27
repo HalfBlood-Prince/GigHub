@@ -1,0 +1,243 @@
+﻿body {
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.voffset1 {
+    margin-top: 30px;
+}
+
+.voffset2 {
+    margin-top: 20px;
+}
+
+
+.voffset3 {
+    margin-top: 15px;
+}
+
+/* Bootstrap Overrides*/
+
+.popover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+
+.navbar-inverse {
+    background-color: #ff4342;
+    border-color: #ff4342;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        background-color: rgba(234, 42, 42, 0.59);
+    }
+    .navbar-inverse .navbar-nav .notification {
+        position: relative;
+    }
+
+.navbar-inverse .navbar-nav .notification .badge{
+    position: absolute;
+    top: 9px;
+    right: -1px;
+    background-color: #a80a0a;
+}
+
+
+
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+body {
+    font-size: 17px;
+}
+
+.form-control {
+    -ms-border-radius: 9px;
+    border-radius: 9px;
+    font-size: 17px;
+    height: 44px;
+}
+
+    .form-control:focus {
+        border-color: #2169f3;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        padding: 7px 15px;
+    }
+
+.btn {
+    /*font-size: 17px;
+    padding: 7px 15px;*/
+    border-radius: 9px;
+}
+
+/*Page lavel styles*/
+
+
+.gigs {
+    list-style: none;
+}
+
+
+    .gigs > li .date {
+        background-color: red;
+        width: 60px;
+        text-align: center;
+        border-radius: 8px;
+        color: white;
+    }
+
+        .gigs > li .date .month {
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 2px 6px;
+        }
+
+        .gigs > li .date .day {
+
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 6px 12px;
+
+        }
+
+.gigs > li .details .artist {
+
+    font-weight: bold;
+    display: block;
+}
+
+    .gigs > li .details .genre {
+        font-size: 15px;
+    }
+    .gigs > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+
+        .gigs > li .details {
+            position: absolute;
+            top: 0;
+            left: 70px;
+        }
+
+        .gigs > li .actions {
+
+            font-size: 15px;
+            display: none;
+        }
+
+
+.gigs > li:hover .actions {
+
+    display: block;
+}
+
+.gigs > li {
+
+    width: 25%;
+}
+
+.pop-noti .PopNoti {
+    list-style: none;
+    padding-left: 0px;
+}
+
+
+.pop-noti .PopNoti > li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 10px;
+}
+    .PopNoti > li:last-child {
+
+        border-bottom: none;
+    }
+
+.pop-noti .popover-content {
+
+    padding: 0px;
+}
+
+.pop-noti .PopNoti .highlight {
+
+    font-weight: bold;
+}
+
+#searchBox {
+    width: 300px;
+}
